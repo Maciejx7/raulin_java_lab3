@@ -1,66 +1,38 @@
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 public class Main {
     public static void main(String[] args) {
     /* zad.1
-        a) Stworzyć prosty enum "LiczbyEnum" z liczbami od 1 do 6 zapisanymi słownie,
-        b) stworzyć prosty enum "StatusEnum" z wartościami KONTYNUUJEMY i KONIEC,
-        c) stworzyć pętlę while z wartością true w warunku (nieskończona pętla),
-        d) niech w pętli są podawane wartości liczbowe z klawiatury,
-        e) jeśli użytkownik poda z klawiatury 0 to program ma kończyć działanie,
-        f) umieścić w pętli switch() case: które będą wypisywały cyfry słownie odpowiednio
-        do podanych cyfr przez użytkownika,
-        g) gdy użytkownik wciśnie 0 ma wyświetlić się status KONIEC w innym wypadku KONTYNUUJEMY :),
-        */
-        enum LiczbyEnum {
-            Raz, Dwa, Trzy, Cztery, Pięć, Sześć;
+            a) Stworzyć publiczną klasę Student z 2-ma polami String, 1 polem int i 1 polem boolean,
+            klasa ma się znajdować w osobnym pliku Student.java
+            b) stworzyć 3 objekty klasy student i wstawić je do tablicy
+            c) wyświetlić dane z tablicy, użyć pętli for lub forEach
+            d) dane powinny być estetycznie przedstawione
+         */
+        List<Student> studenci= new ArrayList<>();
+        Student z = new Student();
+        z.imie= "Bolek ";
+        z.nazwisko = "Raz ";
+        z.a= 29;
+        z.b = true;
+        studenci.add(z);
+
+        Student x = new Student();
+        x.imie = "Andrzej ";
+        x.nazwisko = "Dwa ";
+        x.a = 21;
+        x.b = false;
+        studenci.add(x);
+
+        Student c = new Student();
+        c.imie = "Mateusz ";
+        c.nazwisko = "Trzy ";
+        c.a = 34;
+        c.b= true;
+        studenci.add(c);
+
+        for (Student o : studenci){
+            System.out.println(z.imie+z.nazwisko+z.a+z.b+"\n"+x.imie+x.nazwisko+x.a+x.b+"\n"+c.imie+c.nazwisko+c.a+c.b);
         }
-        enum StatusEnum {
-            KONIEC, KONTYNUUJ;
-        }
-        Scanner in = new Scanner(System.in);
-        int i;
-        while (true) {
-
-            i = in.nextInt();
-
-            if (i == 0) {
-
-                System.out.println(StatusEnum.KONIEC);
-
-                break;
-            }
-
-            switch (i) {
-
-                case 1:
-                    System.out.println(LiczbyEnum.Raz);
-                    break;
-
-                case 2:
-                    System.out.println(LiczbyEnum.Dwa);
-                    break;
-
-                case 3:
-                    System.out.println(LiczbyEnum.Trzy);
-                    break;
-                case 4:
-
-                    System.out.println(LiczbyEnum.Cztery);
-                    break;
-
-                case 5:
-                    System.out.println(LiczbyEnum.Pięć);
-                    break;
-
-                case 6:
-                    System.out.println(LiczbyEnum.Sześć);
-                    break;
-
-                default:
-                    System.out.println(StatusEnum.KONTYNUUJ);
-            }
-
-        }
-
     }
 }
