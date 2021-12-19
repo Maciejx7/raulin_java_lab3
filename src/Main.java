@@ -1,33 +1,43 @@
 import java.util.ArrayList;
-import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-/*  zad.1 - Najpierw należy uzupełnić kod w klasie Punkt.java,
-            a) stworzyć objekt punktA typu Punkt,
-            w konstruktorze zainicjować zmienną pX --> np. new Punkt(7), wykonać metodę punktA.toString();
-            b) następnie ponownie wywopać konstruktor inicjalizujący wszystkie pola z klasy
-            --> np. punkt = new Punkt(1, 2, 3);, wykonać metodę punktA.toString();
-            c) nadpisać wartości pól z objektu punktA za pomocą setterów i
-            ponownie wywołać metodę toString();
-            d) wypisać wartości pól (za pomocą getterów),
-            e) wywołać metody suma i róznica (obie wersje) z klasy punkt
-        */
-        Punkt punktA = new Punkt(7);
-        System.out.println(punktA.toString());
-        Punkt punkt = new Punkt(1,2,3);
-        System.out.println(punkt.toString());
-        punktA.setpX(1);
-        punktA.setpY(2);
-        punktA.setpZ(3);
-        System.out.println(punktA.toString());
-        punktA.getpX();
-        punktA.getpY();
-        punktA.getpZ();
-        Punkt.getpX();
-        Punkt.getpY();
-        Punkt.getpZ();
+/* zad.1
+            a) Stworzyć klasę Osoba z polami prywatnymi:
+            - imie (String),
+            - nazwisko (String),
+            - indeks (Integer)
+            b) stworzyc konstruktory, gettery i settery
+            c) napisać metodę w klasie Osoba która zwróci informację o osobie,
+         */
+        /* zad.2
+            a) Stworzyć klasę Student z polami prywatnymi
+            - Osoba osoba,
+            - WydzialEnum wydzial;
+            b) stworzyć enum WydzialEnum (w nowym pliku) z kilkoma polami,
+            c) stworzyc konstruktory, gettery i settery
+            d) nadpisać metodę toString aby zwracała wszystkie elementy ładnie przedstawione :)
+         */
 
-        System.out.println(wynik);
+        /* zad.3
+            a) W klasie Main stworzyć 5 różnych studentów, (można za pomocą tego samego objektu)
+            b) dodać studentów do Listy ArrayList,
+            c) przeiterować listę za pomocą pętli forEach wywołując na każdym objekcie metodę toString() (w każdej iteracji);
+         */
+        Student student = new Student(new Osoba("Bronek", "Malina", 57062), WydziałEnum.PROGRAMOWANIE);
+        Student student1 = new Student(new Osoba("Joanna", "Polak", 13253), WydziałEnum.ROBOTYKA);
+        Student student2 = new Student(new Osoba("Piotr", "Rudek", 31290), WydziałEnum.SIECI);
+        Student student3 = new Student(new Osoba("Kamil", "Kowalski", 59801), WydziałEnum.ROBOTYKA);
+        Student student4 = new Student(new Osoba("Kuba", "Wójt", 47395), WydziałEnum.SIECI);
+        ArrayList<Student> uczen = new <Student>ArrayList();
+        uczen.add(student);
+        uczen.add(student1);
+        uczen.add(student2);
+        uczen.add(student3);
+        uczen.add(student4);
+        for (Student student5 : uczen) {
+            System.out.println(student5.toString());
+        }
 
     }
 }
