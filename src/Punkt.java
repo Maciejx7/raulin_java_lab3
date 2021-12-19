@@ -2,6 +2,7 @@ public class Punkt {
     /* stworzyć zmienne prywatne pX, pY, pZ */
     private int pX, pY, pZ ;
     public int wynik;
+    public int x,y,z;
     /* stworzyć
         a) pusty konstruktor,
         b) konstruktor inicjalizujacy zmienną pX,
@@ -51,9 +52,7 @@ public class Punkt {
     }
     @Override
         public wynik toString() {
-        return "Punkt{" +
-                "x=" + pX +
-                ", y=" + pY +
-                ", z=" + pZ }
+        return suma() + roznica() + roznica(int x,int y,int z);
+
     }
 }
