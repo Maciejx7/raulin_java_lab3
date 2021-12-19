@@ -2,37 +2,32 @@ import java.util.ArrayList;
 import java.util.List;
 public class Main {
     public static void main(String[] args) {
-    /* zad.1
-            a) Stworzyć publiczną klasę Student z 2-ma polami String, 1 polem int i 1 polem boolean,
-            klasa ma się znajdować w osobnym pliku Student.java
-            b) stworzyć 3 objekty klasy student i wstawić je do tablicy
-            c) wyświetlić dane z tablicy, użyć pętli for lub forEach
-            d) dane powinny być estetycznie przedstawione
-         */
-        List<Student> studenci= new ArrayList<>();
-        Student z = new Student();
-        z.imie= "Bolek ";
-        z.nazwisko = "Raz ";
-        z.a= 29;
-        z.b = true;
-        studenci.add(z);
+/*  zad.1 - Najpierw należy uzupełnić kod w klasie Punkt.java,
+            a) stworzyć objekt punktA typu Punkt,
+            w konstruktorze zainicjować zmienną pX --> np. new Punkt(7), wykonać metodę punktA.toString();
+            b) następnie ponownie wywopać konstruktor inicjalizujący wszystkie pola z klasy
+            --> np. punkt = new Punkt(1, 2, 3);, wykonać metodę punktA.toString();
+            c) nadpisać wartości pól z objektu punktA za pomocą setterów i
+            ponownie wywołać metodę toString();
+            d) wypisać wartości pól (za pomocą getterów),
+            e) wywołać metody suma i róznica (obie wersje) z klasy punkt
+        */
+        Punkt punktA = new Punkt(7);
+        System.out.println(punktA.toString());
+        Punkt punkt = new Punkt(1,2,3);
+        System.out.println(punkt.toString());
+        punktA.setpX(1);
+        punktA.setpY(2);
+        punktA.setpZ(3);
+        System.out.println(punktA.toString());
+        punktA.getpX();
+        punktA.getpY();
+        punktA.getpZ();
+        Punkt.getpX();
+        Punkt.getpY();
+        Punkt.getpZ();
 
-        Student x = new Student();
-        x.imie = "Andrzej ";
-        x.nazwisko = "Dwa ";
-        x.a = 21;
-        x.b = false;
-        studenci.add(x);
+        System.out.println(wynik);
 
-        Student c = new Student();
-        c.imie = "Mateusz ";
-        c.nazwisko = "Trzy ";
-        c.a = 34;
-        c.b= true;
-        studenci.add(c);
-
-        for (Student o : studenci){
-            System.out.println(z.imie+z.nazwisko+z.a+z.b+"\n"+x.imie+x.nazwisko+x.a+x.b+"\n"+c.imie+c.nazwisko+c.a+c.b);
-        }
     }
 }
